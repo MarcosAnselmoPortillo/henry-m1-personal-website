@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Proyecto M1</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Marcos Portillo</title>
+  </head>
+  <body>
+    <section id="sobre-mi">
+      <h1>Marcos Portillo</h1>
+      <h2>Sobre mí</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, explicabo!
+        Sapiente atque ullam esse ipsam aperiam nesciunt architecto nemo ratione
+        ducimus exercitationem temporibus, ex iure dolor maxime pariatur eveniet
+        repellat.
+      </p>
+    </section>
+
+    <section id="mis-tecnologias-favoritas">
+      <h2>Mis Tecnologías Favoritas</h2>
+      <div class="tecnologias">
+        <div class="tecnologia">
+          <img src="/assets/javascript.png" alt="JavaScript" />
+        </div>
+        <div class="tecnologia">
+          <img src="/assets/html.png" alt="HTML" />
+        </div>
+        <div class="tecnologia">
+          <img src="/assets/css.png" alt="CSS" />
+        </div>
+      </div>
+    </section>
+
+    <section id="mis-actividades">
+      <h2>Mis Actividades Favoritas</h2>
+      <form id="formulario-actividad">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required /><br />
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea><br />
+
+        <label for="url-imagen">URL de Imagen:</label>
+        <input type="url" id="url-imagen" name="url-imagen" required /><br />
+
+        <button type="submit">Agregar Actividad</button>
+      </form>
+
+      <div id="contenedor-actividades"></div>
+    </section>
+  </body>
 </html>
