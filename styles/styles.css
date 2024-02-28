@@ -19,6 +19,10 @@ section {
   margin: auto;
 }
 
+footer{
+  margin: auto;
+  text-align: center;
+}
 .tecnologias {
   display: flex;
   justify-content: space-evenly;
