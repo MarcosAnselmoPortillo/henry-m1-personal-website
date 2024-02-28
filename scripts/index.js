@@ -22,12 +22,6 @@ class Repository {
   }
 
   deleteActivity(id) {
-    const index = this.activities.findIndex((el) => el.id === id);
-    if (index !== -1) {
-      this.activities.splice(index, 1);
-      return true;
-    } else {
-      return false;
-    }
+    this.activities = this.activities.filter(activity => activity.id !== id);
   }
 }
