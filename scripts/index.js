@@ -29,7 +29,6 @@ class Repository {
 const repository = new Repository();
 
 function convertActivityToHtml(activity) {
-  console.log(activity);
   const { id, title, description, imgUrl } = activity;
 
   const titleTag = document.createElement("h3");
@@ -38,7 +37,7 @@ function convertActivityToHtml(activity) {
 
   titleTag.innerHTML = title;
   descriptionTag.innerHTML = description;
-  imageTag.src = imgUrl;
+  imageTag.setAttribute("src", imgUrl);
 
   const divActivity = document.createElement("div");
 
@@ -47,7 +46,7 @@ function convertActivityToHtml(activity) {
   divActivity.appendChild(imageTag);
 
   divActivity.className = "actividad";
-  console.log(divActivity);
+
   return divActivity;
 }
 
@@ -56,20 +55,15 @@ function convertirTodasLasActivities() {
     "contenedor-actividades"
   );
 
-  console.log(contenedorActividades);
-
   contenedorActividades.innerHTML = " ";
 
   const actividades = repository.getAllActivities();
-  console.log(actividades);
 
   const activitiesHTML = actividades.map(convertActivityToHtml);
-  console.log(activitiesHTML);
 
   activitiesHTML.forEach((element) => {
     contenedorActividades.appendChild(element);
   });
-  console.log(contenedorActividades);
 }
 
 const agregarActividadButton = document.getElementById("agregar-actividad-btn");
@@ -91,8 +85,6 @@ const agregarActividadHandler = () => {
   }
 
   repository.createActivity(++idActividad, titulo, descripcion, imagenUrl);
-
-  console.log(repository.getAllActivities());
 
   convertirTodasLasActivities();
 };
