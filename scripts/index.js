@@ -29,7 +29,7 @@ class Repository {
 const repository = new Repository();
 
 function convertActivityToHtml(activity) {
-  const { id, title, description, imgUrl } = activity;
+  const {title, description, imgUrl } = activity;
 
   const titleTag = document.createElement("h3");
   const descriptionTag = document.createElement("p");
@@ -71,22 +71,21 @@ const agregarActividadButton = document.getElementById("agregar-actividad-btn");
 let idActividad = 0;
 
 const agregarActividadHandler = () => {
-  const tituloImput = document.getElementById("titulo");
-  const descripcionInput = document.getElementById("descripcion");
-  const imagenUrlInput = document.getElementById("url-imagen");
-
-  const titulo = tituloImput.value;
-  const descripcion = descripcionInput.value;
-  const imagenUrl = imagenUrlInput.value;
+  const form = document.getElementById("formulario-actividad");
+  
+  const titulo = document.getElementById("titulo").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const imagenUrl = document.getElementById("url-imagen").value;
 
   if (titulo == "" || descripcion == "" || imagenUrl == "") {
-    alert("Debe llenar todos los campos");
-    return;
+    return alert("Debe llenar todos los campos");
   }
 
   repository.createActivity(++idActividad, titulo, descripcion, imagenUrl);
 
   convertirTodasLasActivities();
+  
+  form.reset();
 };
 
 agregarActividadButton.addEventListener("click", agregarActividadHandler);
