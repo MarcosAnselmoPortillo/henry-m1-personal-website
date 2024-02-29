@@ -38,3 +38,15 @@ footer{
 .tecnologias img:hover {
   transform: scale(1.2);
 }
+
+.actividades {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.actividades img {
+  max-width: 100%;
+  height: auto;
+}
